@@ -1,0 +1,26 @@
+from math import *
+
+s = 4
+t = 1 
+a = (s - 4*t)
+y = (s/t)
+
+x = ((2*cos(a)**3 + 3*y)/(2 + 3*y))
+
+print(x)
+
+m = int(input())
+
+if -10 > m >= -30:
+    print("true")
+else:
+    print("false")
+
+n = int(input())
+
+if -5 >= n > -10:
+    print("true")
+elif 2 >= n >= -2:
+    print("true")
+else:
+    print("false")
