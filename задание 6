@@ -1,18 +1,18 @@
-A = [1, 2, 3, 0, -5, 6, 7, 0, -3]
-
-NM = None
-NZ = None
-
-for i in range(len(A)):
-    if A[i] < 0 and NM is None:
-        NM = i + 1  
-    if A[i] == 0 and NZ is None:
-        NZ = i + 1  
-    if NM is not None and NZ is not None:
-        break
+m = 15 
+A = [3, -2, 5, -1, 0, 4, 7, -5, 2, 1, -6, 8, -3, 9, -4]
 
 print("array:", A)
 
-print("NM:", NM)
+p_sum = sum(num for num in A if num > 0)
 
-print(" NZ:", NZ)
+n_count = sum(1 for num in A if num < 0)
+
+for i in range(m):
+    if A[i] < 0:
+        A[i] *= 2
+
+print("array:", A)
+
+print("sum+:", p_sum)
+
+print("count-:", n_count)
