@@ -1,0 +1,32 @@
+def find_min_in_row(row):
+    return min(row)
+
+def find_negative_sum_in_column(matrix, col):
+    neg_sum = 0
+    for row in matrix:
+        if row[col] < 0:
+            neg_sum += row[col]
+    return neg_sum
+
+def cut_vector(matrix, row_num):
+    return matrix[row_num]
+
+def main():
+    file_name = input("Введите имя файла с матрицей: ")
+    k = int(input("Введите номер строки k: "))
+
+    with open(file_name, 'r') as file:
+        matrix = [list(map(int, line.strip().split())) for line in file]
+
+    min_element = find_min_in_row(matrix[k-1])
+    col_index = matrix[k-1].index(min_element)
+    neg_sum_in_col = find_negative_sum_in_column(matrix, col_index)
+
+    print(f"Минимальный элемент в {k}-ой строке: {min_element}")
+    print(f"Сумма отрицательных элементов в столбце {col_index}: {neg_sum_in_col}")
+
+    vector = cut_vector(matrix, k-1)
+    print(f"Вектор из {k}-ой строки: {vector}")
+
+if __name__ == "__main__":
+    main()
