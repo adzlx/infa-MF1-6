@@ -1,7 +1,7 @@
 import numpy as np 
  
-S = 8 
-G = 7 
+S = 11
+G = 6
 S = S/10 
 G = G/10 
  
